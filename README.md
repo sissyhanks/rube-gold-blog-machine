@@ -1,6 +1,6 @@
 # Tech Blog
 
-![placeholder picture](./assets/picture.png)
+![placeholder picture](./assets/joseph.gif)
 
 [LIVE DEMO](https://berkshirerealtors.net/wp-content/uploads/2014/06/pocketlisting.jpg)
 
