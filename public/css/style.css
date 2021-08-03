@@ -1,0 +1,52 @@
+/* CSS HEX */
+/* --raisin-black: #262730ff; */
+/* --beige: #ebebd3ff; */
+/* --cerise: #da4167ff; */
+/* --orange-yellow-crayola: #f4d35eff; */
+/* --bright-lilac: #e2a0ffff; */
+
+:root {
+  --primary: #da4167ff;
+  --secondary: #f4d35eff;
+  --tertiary: #e2a0ffff;
+  --light: #ebebd3ff;
+  --dark: #262730ff;
+  --border-radius: 0.3rem;
+}
+
+body {
+  font-family: Lucida;
+  color: var(--dark);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--tertiary);
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: var(--primary);
+  color: var(--light);
+}
+
+.headline {
+  margin: 20px;
+  flex: 0 1 300px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: var(--light);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
