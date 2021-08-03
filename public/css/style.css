@@ -1,21 +1,14 @@
-/* CSS HEX */
-/* --raisin-black: #262730ff; */
-/* --beige: #ebebd3ff; */
-/* --cerise: #da4167ff; */
-/* --orange-yellow-crayola: #f4d35eff; */
-/* --bright-lilac: #e2a0ffff; */
-
 :root {
-  --primary: #da4167ff;
-  --secondary: #f4d35eff;
-  --tertiary: #e2a0ffff;
+  --primary: #a846a0ff;
+  --secondary: #499167ff;
+  --tertiary: #f3d6ffff;
   --light: #ebebd3ff;
   --dark: #262730ff;
   --border-radius: 0.3rem;
 }
 
 body {
-  font-family: Lucida;
+  font-family: Arial;
   color: var(--dark);
   margin: 0;
   display: flex;
@@ -32,12 +25,12 @@ header {
   color: var(--light);
 }
 
-.headline {
-  margin: 20px;
+.headline header {
+  margin: 10px;
   flex: 0 1 300px;
   border-radius: 10px;
   background-color: var(--secondary);
-  color: var(--dark);
+  color: var(--light);
 }
 
 nav {
@@ -46,6 +39,8 @@ nav {
 
 nav a {
   color: var(--light);
+  font-weight: bold;
+  font-size: 1.5em;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
