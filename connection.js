@@ -3,9 +3,6 @@ require('dotenv').config();
 
 let sequelize;
 
-//if portion says to use credentials found in heroku via JawsDB
-//else portion says to use credentials found in .env file which won't be deployed, yo!
-
 if (process.env.JawsDB_URL) {
   sequelize = new Sequelize(process.env.JawsDB_URL);
 } else {
