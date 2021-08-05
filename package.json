@@ -1,6 +1,6 @@
 {
   "name": "rube-gold-blog-machine",
-  "version": "1.0.0",
+  "version": "14.16.1",
   "description": "tech-blog",
   "main": "server.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "author": "Bernie-McKnight",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.0.4",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
