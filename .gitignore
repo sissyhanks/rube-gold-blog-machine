@@ -1,3 +1,12 @@
 assets/hwGIF.gif
 .env    
 node_modules
+
+
+views/single-post.handlebars
+views/profile.handlebars
+views/edit-post.handlebars
+views/dashboard.handlebars
+views/partials/user-info.handlebars
+views/partials/post-info.handlebars
+views/partials/comments.handlebars

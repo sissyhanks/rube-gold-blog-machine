@@ -15,8 +15,12 @@
     <header class="display-flex justify-space-between align-center p-2">
       <nav>
         <a href="/">Home</a>
-        <a href="/">Dashboard</a>
-        <a href="/login">Login</a>
+          {{#if logged_in}}
+          <a href="/dashboard">dashboard</a>
+          <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
       </nav>
       <h1>
         {{> nav-section}}
@@ -26,6 +30,9 @@
       {{{ body }}}
     </main>
   </div>
+  {{#if logged_in}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

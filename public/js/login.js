@@ -20,7 +20,9 @@ const signupFormHandler = async (event) => {
   }
 };
 
-
+window.onload = function(){
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+}
+

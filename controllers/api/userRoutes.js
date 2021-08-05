@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 router.post('/', async (req, res) => {
   try {
@@ -7,8 +9,8 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
-console.log("logged on");
+      req.session.loggedIn = true;
+
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -27,7 +29,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = userData.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -38,7 +40,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
