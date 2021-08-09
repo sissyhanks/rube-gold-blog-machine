@@ -22,16 +22,16 @@
           <a href="/login">login</a>
           {{/if}}
       </nav>
-      <h1>
+      {{!-- <h1>
         {{> nav-section}}
-      </h1>
+      </h1> --}}
     </header>
     <main class="container container-fluid mt-5">
       {{{ body }}}
     </main>
   </div>
   {{#if logged_in}}
-  <script src="/javascript/logout.js"></script>
+  <script src="../js/logout.js"></script>
   {{/if}}
 </body>
 
