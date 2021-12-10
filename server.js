@@ -1,33 +1,38 @@
+//to do on migrate... install bcrypt npm
+
 const path = require('path');
 // require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars');
+const exphbs  = require('express-handlebars');
 const routes = require('./controllers');
-// const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
-// Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({  });
+const hbs = exphbs.create({ /* config */ });
 
+// the object each session receives
 const sess = {
-  secret: 'Super secret secret',
+  secret: 'key that will sign cookie',
   cookie: { maxAge: 7200000 },
+  // we do not want a nes session each browser visit
   resave: false,
-  saveUninitialized: true,
+//   don't save reoccurring visitors unless the session request is modified
+  saveUninitialized: false,
+  //store session info in database
   store: new SequelizeStore({
     db: sequelize
   })
 };
 
+// innitialized middleware
 app.use(session(sess));
 
-// Inform Express.js on which template engine to use
+// Register `hbs.engine` with the Express app.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -35,10 +40,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// *****keep this example to write a post about >> the req.session.isAuth = true modifies the session request when this path is visited and leaves a cookie ---------------------------
+// app.get('/', function (req, res) {
+//   req.session.isAuth = true;
+//   console.log(req.session);
+//   console.log(req.session.id);
+//   res.send('Hello World')
+// });
+// ----------------------------------------------------------------------------
+
 app.use(routes);
 
-//calling sync() creates/syncs the database table, because force false table is not dropped in the process>> then starts the server once bd table is created
+//calling sync() creates/syncs the database table, because force false table is not dropped in the process>> then starts the server once db table is created
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
-

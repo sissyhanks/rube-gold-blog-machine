@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// .../api/users
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -18,6 +17,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// .../api/users/login
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -59,5 +59,6 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 
 module.exports = router;

@@ -1,3 +1,1 @@
-
-
-CREATE DATABASE blog_db;
+CREATE DATABASE rubegoldblog_db;
