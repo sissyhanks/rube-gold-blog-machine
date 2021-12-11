@@ -354,6 +354,19 @@ input[type="button"].button-clear:focus {
   background-color: #fff;
   border-color: #fff;
 }
+.button.button-center,
+button.button-center,
+input[type="submit"].button-center,
+input[type="reset"].button-center,
+input[type="button"].button-center {
+  font-family: "bitter";
+  position: relative;
+  top: 3rem;
+  font-size: 2.5rem;
+  color: #333;
+  background-color: #fff;
+  border-color: #fff;
+}
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

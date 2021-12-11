@@ -38,19 +38,15 @@
       Tech Blog
     </h1>
   </div>
-  <div class="container" style="border-bottom: 1px solid #e1e1e1; border-top: 1px solid #e1e1e1;  padding-top: 1rem;">
-    <div class="just-center">
-      <a class="button button-clear" href="#">Log In</a>
-      <a class="button button-clear" href="#">Blogroll</a>
-      <a class="button button-clear" href="#">Sign Up</a>
-    </div>
-    
-    </div>
-    <div class="container">
-      <div class="container">
-        {{{body}}}
-      </div>
-  </div>
+  <div>{{#if logged_in}}
+  {{>innav}}
+  {{else}}
+  {{>outnav}}
+  {{/if}}</div>
+  
+<div class="container">{{{ body }}}</div>
+  
+
 
   <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
