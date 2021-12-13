@@ -1,19 +1,27 @@
 <h3>sign up</h3>
-<form>
+<form class="signup-form">
   <div class="row">
     <div class="nine columns">
-      <label for="exampleEmailInput">Your email</label>
-      <input class="u-full-width" type="email" placeholder="your@email.com" id="exampleEmailInput">
+      <label for="emailInput">Your email</label>
+      <input class="u-full-width" type="email" placeholder="your@email.com" id="emailInput">
     </div>
   </div>
 
   <div class="row">
     <div class="nine columns">
-      <label for="examplePasswordInput">User Name</label>
-      <input class="u-full-width" type="password" placeholder="password" id="examplePasswordInput">
+      <label for="usernameInput">Username</label>
+      <input class="u-full-width" type="text" placeholder="Your username here" id="usernameInput">
     </div>
   </div>
-  <label for="exampleMessage">Message</label>
-  <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+
+  <div class="row">
+    <div class="nine columns">
+      <label for="passwordInput">Password</label>
+      <input class="u-full-width" type="password" placeholder="password" id="passwordInput">
+    </div>
+  </div>
+
   <input class="button-primary" type="submit" value="Submit">
 </form>
+
+<script src="/js/signup.js"></script>

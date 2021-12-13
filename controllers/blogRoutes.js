@@ -3,7 +3,13 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    res.render('homepage');
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+      login: false,
+    signup: false,
+    blogroll: true,
+    dashboard: false,
+    });
 
 });
 
@@ -13,7 +19,11 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-  res.render('login');
+  res.render('login', {
+    login: true,
+    signup: false,
+    blogroll: false,
+  });
 });
 
 router.get('/signup', async (req, res) => {
@@ -22,7 +32,20 @@ router.get('/signup', async (req, res) => {
     res.redirect('/');
     return;
   }
-  res.render('signup');
+  res.render('signup', {
+    signup: true,
+    login: false,
+    blogroll: false
+  });
+});
+
+router.get('/dashboard', (req, res) => {
+    res.render('dash', {
+      logged_in: req.session.logged_in,
+    blogroll: false,
+    dashboard: true,
+    });
+
 });
 
 module.exports = router;
