@@ -14,7 +14,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const hbs = exphbs.create({ /* config */ });
+const hbs = exphbs.create({  });
 
 // the object each session receives
 const sess = {
