@@ -48,4 +48,13 @@ router.get('/dashboard', (req, res) => {
 
 });
 
+router.get('/newpost', (req, res) => {
+    res.render('newpost', {
+      logged_in: req.session.logged_in,
+    blogroll: false,
+    dashboard: true,
+    });
+
+});
+
 module.exports = router;
