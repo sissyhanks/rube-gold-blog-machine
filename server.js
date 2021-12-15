@@ -3,18 +3,24 @@
 const path = require('path');
 // require('dotenv').config();
 const express = require('express');
-const session = require('express-session');
+
 const exphbs  = require('express-handlebars');
+const hbs = exphbs.create({  });
+
+const session = require('express-session');
+
 const routes = require('./controllers');
 // const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const hbs = exphbs.create({  });
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+
 
 // the object each session receives
 const sess = {
@@ -33,13 +39,15 @@ const sess = {
 // innitialized middleware
 app.use(session(sess));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Register `hbs.engine` with the Express app.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 // *****keep this example to write a post about >> the req.session.isAuth = true modifies the session request when this path is visited and leaves a cookie ---------------------------
 // app.get('/', function (req, res) {

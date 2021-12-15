@@ -13,11 +13,11 @@ Post.init(
     },
     title: {
       type: DataTypes.STRING,
-      allowNull:false
+      allowNull:false,
     },
-    body: {
+    blog_text: {
       type: DataTypes.TEXT,
-      allowNull:false
+      allowNull:false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -29,7 +29,7 @@ Post.init(
   },
   {
     sequelize,
-    timestamps: true,
+    // timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'post', 
