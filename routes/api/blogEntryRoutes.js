@@ -23,7 +23,7 @@ router.put('/:id', async (req, res) => {
       },
       {
         where: {
-          id: req.params.blog_id,
+          id: req.params.id,
         },
       });
       res.status(200).json(updateBlogEntry);
