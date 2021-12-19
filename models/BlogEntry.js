@@ -1,4 +1,3 @@
-const { init } = require('express/lib/application');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -6,7 +5,7 @@ class BlogEntry extends Model {}
 
 BlogEntry.init(
   {
-    id: {
+    blog_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true

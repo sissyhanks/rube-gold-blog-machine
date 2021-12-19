@@ -23,13 +23,23 @@ router.put('/:id', async (req, res) => {
       },
       {
         where: {
-          id: req.params.id,
+          id: req.params.blog_id,
         },
       });
       res.status(200).json(updateBlogEntry);
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+router.delete('/:id', async (req, res) => {
+  const deletedBlogEntry = await BlogEntry.destroy({
+    where: {
+      id: req.params.id,
+    },
+  });
+
+  res.json(deletedBlogEntry);
 });
 
 module.exports = router;
