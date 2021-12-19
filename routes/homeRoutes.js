@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, BlogEntry, Comment } = require('../models');
 
 router.get('/', (req, res) => {
-  res.send('hello world');
+  res.send('hello tall');
 });
 
 module.exports = router;

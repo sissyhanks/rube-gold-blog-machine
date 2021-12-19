@@ -8,15 +8,15 @@ BlogEntry.init(
     blog_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     entry_text: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -24,7 +24,7 @@ BlogEntry.init(
         model: 'user',
         key: 'id',
       },
-    }
+    },
   },
   {
     sequelize,
