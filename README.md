@@ -17,6 +17,7 @@
 ## Description
 
 this is a blog... that is technical!
+![database diagram](./assets/blog.png)
 
 ## Installation
 
