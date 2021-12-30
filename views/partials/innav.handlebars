@@ -1,0 +1,16 @@
+<div class="container" style="border-bottom: 1px solid #e1e1e1; border-top: 1px solid #e1e1e1;  padding-top: 1rem;">
+  <div class="just-center">
+{{#if dashboard}}
+    <a class="button button-clear" id="blogroll" href="#" target='blogroll'>Blogroll</a>
+    <a class="button button-center" id="dashboard" href="#" target='dashboard'>Dashboard</a>
+    <a class="button button-clear" id="logout" href="#" target='logout'>Log Out</a>
+{{else}}
+    <a class="button button-clear" id="dashboard" href="#" target='dashboard'>Dashboard</a>
+    <a class="button button-center" id="blogroll" href="#" target='blogroll'>Blogroll</a>
+    <a class="button button-clear" id="logout" href="#" target='logout'>Log Out</a>
+{{/if}}
+
+  </div>
+</div>
+
+<script src="/js/inButtons.js"></script>

@@ -1,0 +1,14 @@
+{{#each blogs as |blog|}}
+  <div class="row align-center mb-5">
+    <div class="col-md-6">
+      <h2>{{blog.title}}</h2>
+      <h4>{{blog.user.user_name}}</h4>
+    </div>
+    <div class="col-md-6">
+      <p>{{blog.entry_text}}</p>
+      {{#each comments as |comment|}}
+        <p>{{comment.comment_entry}}</p>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}

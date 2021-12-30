@@ -19,9 +19,17 @@ router.get("/", async (req, res) => {
       ],
     });
 
+    const blogs = projectData.map((project) => project.get({ plain: true }));
+    const comments = projectData.comment_entry.map((project) =>
+      project.get({ plain: true })
+    );
+
     // Pass serialized data and session flag into template
     console.log(projectData);
-    res.json(projectData);
+    res.render("homepage", {
+      blogs,
+      comments,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

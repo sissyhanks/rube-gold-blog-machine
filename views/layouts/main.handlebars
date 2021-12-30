@@ -40,6 +40,19 @@
     <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+    <div class="container">
+    <h1 style="text-align:center;">
+      Tech Blog
+    </h1>
+  </div>
+  <div>{{#if logged_in}}
+    {{>innav}}
+    {{else}}
+    {{>outnav}}
+    {{/if}}</div>
+
+  <div class="container">{{{ body }}}</div>
+
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </body>
