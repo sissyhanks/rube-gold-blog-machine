@@ -15,4 +15,22 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const updateComment = await Comment.update(
+      {
+        comment_entry: req.body.comment_entry,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json(updateComment);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
